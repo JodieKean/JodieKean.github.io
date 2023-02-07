@@ -165,12 +165,18 @@ stylesheet: products
         params.append("referral_id", Rewardful.referral);
         const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         //window.open(url, "_blank");
+        
+    let FB_META_TOKEN = fetch('https://api.kommu.ai/tracker/begin')
+             .then(response => response.text())
+             .then(data => console.log(data))
+             .catch(error => console.error(error))
+
   
         let result = fetch('https://graph.facebook.com/v16.0/586857186218202/events', {
   method: 'POST',
   headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + 'EAAZAwAx0bjHkBAHNuS1M2idDWZBDZCocup6qt1T5y6GkOFUVJijiPXAm97C9hivoS5HIKmHKZClCLKZC91aqFSpkZCpuUVUVHZCRX3d70z0NSSo1DEFeeuTlB5NlSnZBAAxNRYHc4Tyb7Cn2fhRMbEZAZADt0syfhwqdZCuMHZBbysJnAxYmAT7DVbcEosqR3PJ60UcZD'
+      'Authorization': 'Bearer ' + FB_META_TOKEN
   },
   body: JSON.stringify({
       "data": [
@@ -221,11 +227,16 @@ stylesheet: products
         const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         //window.open(url, "_blank");
         
+         let FB_META_TOKEN = fetch('https://api.kommu.ai/tracker/begin')
+             .then(response => response.text())
+             .then(data => console.log(data))
+             .catch(error => console.error(error))
+        
         let result = fetch('https://graph.facebook.com/v16.0/586857186218202/events', {
   method: 'POST',
   headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + 'EAAZAwAx0bjHkBAHNuS1M2idDWZBDZCocup6qt1T5y6GkOFUVJijiPXAm97C9hivoS5HIKmHKZClCLKZC91aqFSpkZCpuUVUVHZCRX3d70z0NSSo1DEFeeuTlB5NlSnZBAAxNRYHc4Tyb7Cn2fhRMbEZAZADt0syfhwqdZCuMHZBbysJnAxYmAT7DVbcEosqR3PJ60UcZD'
+      'Authorization': 'Bearer ' + FB_META_TOKEN
   },
   body: JSON.stringify({
       "data": [
