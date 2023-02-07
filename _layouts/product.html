@@ -165,8 +165,8 @@ stylesheet: products
         params.append("referral_id", Rewardful.referral);
         const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         window.open(url, "_blank");
-        
-        fetch('https://graph.facebook.com/v16.0/586857186218202/events', {
+  
+        let result = fetch('https://graph.facebook.com/v16.0/586857186218202/events', {
   method: 'POST',
   headers: {
       'Content-Type': 'application/json',
@@ -212,7 +212,7 @@ stylesheet: products
 .then(data => console.log(data))
 .catch(error => console.error(error))
         
-    };
+    }; console.log(result);
 
     buyButton[1].onclick = () => {
         const params = new URLSearchParams();
