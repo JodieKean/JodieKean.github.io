@@ -166,7 +166,7 @@ stylesheet: products
         const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         //window.open(url, "_blank");
   
-        /*let result = fetch('https://graph.facebook.com/v16.0/586857186218202/events', {
+        let result = fetch('https://graph.facebook.com/v16.0/586857186218202/events', {
   method: 'POST',
   headers: {
       'Content-Type': 'application/json',
@@ -211,46 +211,6 @@ stylesheet: products
 .then(response => response.json())
 .then(data => console.log(data))
 .catch(error => console.error(error))
-        */
-        'use strict';
-const bizSdk = require('facebook-nodejs-business-sdk');
-const ServerEvent = bizSdk.ServerEvent;
-const EventRequest = bizSdk.EventRequest;
-const UserData = bizSdk.UserData;
-const CustomData = bizSdk.CustomData;
-const Content = bizSdk.Content;
-
-const access_token = 'EAAZAwAx0bjHkBAASeZCZCUup70XkDzVYyQnIYU0BgZAOyW8IEqwtMcmAxZCZACKqE8EhbgZBxX0UhHqB7iC2jpb9R2mPTdLX7gjMgFZALda9AlZAQuP381fv8aHdN0iXaeg9rKnAJ8keyv9gtnnZBZCdTIQkiZBXarbxtlFimLgLbtYgXm8J5WpOJQvIDZAWN6LqSrfgZD';
-const pixel_id = '586857186218202';
-const api = bizSdk.FacebookAdsApi.init(access_token);
-
-let current_timestamp = Math.floor(new Date() / 1000);
-
-const userData_0 = (new UserData())
-    .setEmails(["78ef3d0f544dcd3b3566d97569322511eb85f75d16cbf084ca28a09da6da12cc"])
-    .setPhones(["74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"])
-    .setGenders(["62c66a7a5dd70c3146618063c344e531e6d4b59e379808443ce962b3abd63c5a"])
-    .setLastNames(["3ed58504bfc045320e24aaca78ed83508f961fdd7a2dd561ce85799fb357a2db"])
-    .setFirstNames(["3c3d2cd8eedcb5e024a660e24c48cf6ae713e44d273df950d60d0eba8e76b659"])
-    .setClientIpAddress("192.19.2.2")
-    .setClientUserAgent("testing")
-    .setFbc("fb.1.12345678.12345678")
-    .setFbp("fb.1.12345678.12345678");
-const customData_0 = (new CustomData())
-    .setValue(3499)
-    .setCurrency("MYR");
-const serverEvent_0 = (new ServerEvent())
-    .setEventName("InitiateCheckout")
-    .setEventTime(1675747148)
-    .setUserData(userData_0)
-    .setCustomData(customData_0)
-    .setActionSource("website");
-
-const eventsData = [serverEvent_0];
-const eventRequest = (new EventRequest(access_token, pixel_id))
-    .setEvents(eventsData);
-eventRequest.execute();
-let result = eventRequest;
     }; 
 
     buyButton[1].onclick = () => {
@@ -261,7 +221,7 @@ let result = eventRequest;
         const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         //window.open(url, "_blank");
         
-        /*let result = fetch('https://graph.facebook.com/v16.0/586857186218202/events', {
+        let result = fetch('https://graph.facebook.com/v16.0/586857186218202/events', {
   method: 'POST',
   headers: {
       'Content-Type': 'application/json',
@@ -305,47 +265,7 @@ let result = eventRequest;
 })
 .then(response => response.json())
 .then(data => console.log(data))
-.catch(error => console.error(error))*/
-        
-        'use strict';
-const bizSdk = require('facebook-nodejs-business-sdk');
-const ServerEvent = bizSdk.ServerEvent;
-const EventRequest = bizSdk.EventRequest;
-const UserData = bizSdk.UserData;
-const CustomData = bizSdk.CustomData;
-const Content = bizSdk.Content;
-
-const access_token = 'EAAZAwAx0bjHkBAASeZCZCUup70XkDzVYyQnIYU0BgZAOyW8IEqwtMcmAxZCZACKqE8EhbgZBxX0UhHqB7iC2jpb9R2mPTdLX7gjMgFZALda9AlZAQuP381fv8aHdN0iXaeg9rKnAJ8keyv9gtnnZBZCdTIQkiZBXarbxtlFimLgLbtYgXm8J5WpOJQvIDZAWN6LqSrfgZD';
-const pixel_id = '586857186218202';
-const api = bizSdk.FacebookAdsApi.init(access_token);
-
-let current_timestamp = Math.floor(new Date() / 1000);
-
-const userData_0 = (new UserData())
-    .setEmails(["78ef3d0f544dcd3b3566d97569322511eb85f75d16cbf084ca28a09da6da12cc"])
-    .setPhones(["74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"])
-    .setGenders(["62c66a7a5dd70c3146618063c344e531e6d4b59e379808443ce962b3abd63c5a"])
-    .setLastNames(["3ed58504bfc045320e24aaca78ed83508f961fdd7a2dd561ce85799fb357a2db"])
-    .setFirstNames(["3c3d2cd8eedcb5e024a660e24c48cf6ae713e44d273df950d60d0eba8e76b659"])
-    .setClientIpAddress("192.19.2.2")
-    .setClientUserAgent("testing")
-    .setFbc("fb.1.12345678.12345678")
-    .setFbp("fb.1.12345678.12345678");
-const customData_0 = (new CustomData())
-    .setValue(3499)
-    .setCurrency("MYR");
-const serverEvent_0 = (new ServerEvent())
-    .setEventName("InitiateCheckout")
-    .setEventTime(1675747148)
-    .setUserData(userData_0)
-    .setCustomData(customData_0)
-    .setActionSource("website");
-
-const eventsData = [serverEvent_0];
-const eventRequest = (new EventRequest(access_token, pixel_id))
-    .setEvents(eventsData);
-eventRequest.execute();
-let result = eventRequest;
+.catch(error => console.error(error))
     };
     
     console.log(result);
