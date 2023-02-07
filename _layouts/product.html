@@ -166,7 +166,9 @@ stylesheet: products
         const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         //window.open(url, "_blank");
         
-    let FB_META_TOKEN = fetch('https://api.kommu.ai/tracker/begin')
+    let FB_META_TOKEN = fetch('https://api.kommu.ai/tracker/begin', {
+  mode: 'no-cors'
+    })
              .then(response => response.text())
              .then(data => console.log(data))
              .catch(error => console.error(error))
@@ -227,7 +229,9 @@ stylesheet: products
         const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         //window.open(url, "_blank");
         
-         let FB_META_TOKEN = fetch('https://api.kommu.ai/tracker/begin')
+         let FB_META_TOKEN = fetch('https://api.kommu.ai/tracker/begin', {
+  mode: 'no-cors'
+    })
              .then(response => response.text())
              .then(data => console.log(data))
              .catch(error => console.error(error))
