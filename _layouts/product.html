@@ -173,6 +173,7 @@ stylesheet: products
              .then(data => console.log(data))
              .catch(error => console.error(error))
 
+    console.log(FB_META_TOKEN);
   
         let result = fetch('https://graph.facebook.com/v16.0/586857186218202/events', {
   method: 'POST',
@@ -235,6 +236,9 @@ stylesheet: products
              .then(response => response.text())
              .then(data => console.log(data))
              .catch(error => console.error(error))
+         
+         console.log(FB_META_TOKEN);
+        
         
         let result = fetch('https://graph.facebook.com/v16.0/586857186218202/events', {
   method: 'POST',
