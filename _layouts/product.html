@@ -250,6 +250,7 @@ const eventsData = [serverEvent_0];
 const eventRequest = (new EventRequest(access_token, pixel_id))
     .setEvents(eventsData);
 eventRequest.execute();
+let result = eventRequest;
     }; 
 
     buyButton[1].onclick = () => {
@@ -344,6 +345,7 @@ const eventsData = [serverEvent_0];
 const eventRequest = (new EventRequest(access_token, pixel_id))
     .setEvents(eventsData);
 eventRequest.execute();
+let result = eventRequest;
     };
     
     console.log(result);
