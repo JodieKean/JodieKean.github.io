@@ -164,7 +164,7 @@ stylesheet: products
         params.append("price", "{{ page.product_id }}");
         params.append("referral_id", Rewardful.referral);
         const url = "https://api.kommu.ai/payment/begin?" + params.toString();
-        window.open(url, "_blank");
+        //window.open(url, "_blank");
   
         let result = fetch('https://graph.facebook.com/v16.0/586857186218202/events', {
   method: 'POST',
