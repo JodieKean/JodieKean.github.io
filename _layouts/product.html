@@ -212,7 +212,7 @@ stylesheet: products
 .then(data => console.log(data))
 .catch(error => console.error(error))
         
-    }; console.log(result);
+    }; 
 
     buyButton[1].onclick = () => {
         const params = new URLSearchParams();
@@ -222,6 +222,8 @@ stylesheet: products
         const url = "https://api.kommu.ai/payment/begin?" + params.toString();
         window.open(url, "_blank");
     };
+    
+    console.log(result);
 
     const includes = [            
             {% for incl in page.includes %}
