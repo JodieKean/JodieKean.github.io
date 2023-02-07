@@ -170,10 +170,13 @@ stylesheet: products
   mode: 'no-cors'
     })
              .then(response => response.text())
-             .then(data => console.log(data))
+             .then(data => {
+                   console.log(data);
+                   return data;
+             })
              .catch(error => console.error(error))
-
-    console.log(FB_META_TOKEN);
+         
+         FB_META_TOKEN.then(token => console.log(token));
   
         let result = fetch('https://graph.facebook.com/v16.0/586857186218202/events', {
   method: 'POST',
@@ -234,10 +237,13 @@ stylesheet: products
   mode: 'no-cors'
     })
              .then(response => response.text())
-             .then(data => console.log(data))
+             .then(data => {
+                   console.log(data);
+                   return data;
+             })
              .catch(error => console.error(error))
          
-         console.log(FB_META_TOKEN);
+         FB_META_TOKEN.then(token => console.log(token));
         
         
         let result = fetch('https://graph.facebook.com/v16.0/586857186218202/events', {
