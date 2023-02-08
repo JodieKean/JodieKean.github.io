@@ -24,6 +24,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,300italic,400italic,700italic">
+    
+    <!-- Retrieve Client IP Address -->
+    <?php
+    $ip = $_SERVER['REMOTE_ADDR'];
+    echo "Your IP address is: " . $ip;
+    ?>
 
     <!-- Meta Pixel Code -->
 <script>
