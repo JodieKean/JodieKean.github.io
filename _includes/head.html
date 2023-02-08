@@ -33,7 +33,7 @@
 <p>Your IP address is: <?php echo $_SERVER['REMOTE_ADDR']; ?></p>
     
     <script>
-const ip = "<?php echo $_SERVER['REMOTE_ADDR']; ?>";
+const ip = <?php echo $_SERVER['REMOTE_ADDR']; ?>;
 console.log('Your IP address is: ${ip}');
     </script>
     
