@@ -73,21 +73,13 @@ src="https://www.facebook.com/tr?id=586857186218202&ev=PageView&noscript=1"
   });
 </script>
     <script>
-    var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://jodiekean.github.io/cdn-cgi/trace", true);
-xhr.onreadystatechange = function() {
-  if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-    var lines = xhr.responseText.split("\n");
-    for (var i = 0; i < lines.length; i++) {
-      if (lines[i].startsWith("ip=")) {
-        var clientIp = lines[i].split("=")[1];
-        console.log("Client IP: " + clientIp);
-        break;
-      }
-    }
-  }
-};
-xhr.send();
+    fetch('https://www.cloudflare.com/cdn-cgi/trace')
+.then(res => res.text() ).then(t => {
+    var data = t.replace(/[\r\n]+/g, '","').replace(/\=+/g, '":"');
+        data = '{"' + data.slice(0, data.lastIndexOf('","')) + '"}';
+    var jsondata = JSON.parse(data);
+    console.log(jsondata.loc);
+})
 </script>
     
 </head>
