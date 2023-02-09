@@ -25,17 +25,8 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,300italic,400italic,700italic">
     
-    <!-- Retrieve Client IP Address -->
-    <script>
-    fetch('get_ip.php')
-     .then(response => response.json())
-     .then(data => console.log(data))
-     .catch(error => console.error(error));
 
-  /*.then(ip => {
-    console.log(`Your IP address is: ${ip}`);
-  });*/
-</script>
+
     
     <!-- Meta Pixel Code -->
 <script>
@@ -56,29 +47,16 @@ src="https://www.facebook.com/tr?id=586857186218202&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
     
-    <!-- Crazy Egg Website Heatmap Tracker Code -->
-<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0114/3143.js" async="async"></script>
-    
-    <!-- Rewardful Tracker Code -->
-<script>(function(w,r){w._rwq=r;w[r]=w[r]||function(){(w[r].q=w[r].q||[]).push(arguments)}})(window,'rewardful');</script>
-<script async src='https://r.wdfl.co/rw.js' data-rewardful='e748c7'></script>
-    
+  
+    <!-- Retrieve Client IP Address -->  
 <script>
-  rewardful('ready', function() {
-    if(Rewardful.referral) {
-      console.log('Current referral ID: ', Rewardful.referral);
-    } else {
-      console.log('No referral present.');
-    }
-  });
-</script>
-    <script>
     fetch('https://www.cloudflare.com/cdn-cgi/trace')
 .then(res => res.text() ).then(t => {
     var data = t.replace(/[\r\n]+/g, '","').replace(/\=+/g, '":"');
         data = '{"' + data.slice(0, data.lastIndexOf('","')) + '"}';
     var jsondata = JSON.parse(data);
     console.log(jsondata.loc);
+    console.log(jsondata.ip);
 })
 </script>
     
