@@ -30,7 +30,8 @@
     fetch('get_ip.php')
   .then(response => {
     response.text();
-    console.log('${response.text()}')
+    console.log('${response.text()}');
+    });
   .then(ip => {
     console.log(`Your IP address is: ${ip}`);
   });
