@@ -28,10 +28,10 @@
     <!-- Retrieve Client IP Address -->
     <script>
     fetch('get_ip.php')
-  .then(response => {
-    response.text();
-    console.log('${response.text()}');
-    });
+     .then(response => response.json())
+     .then(data => console.log(data))
+     .catch(error => console.error(error));
+
   /*.then(ip => {
     console.log(`Your IP address is: ${ip}`);
   });*/
